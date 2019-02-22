@@ -15,9 +15,9 @@ This code leverages both Python and R packages. See requirements.txt for details
 If you find this research helpful to your work, please consider citing:
 ```
 @inproceedings{santos2019self,
-        author = {Santos, Tiago and Walk, Simon and Kern, Roman and Strohmaier, Markus and Helic, Denis},
-        title = {Self- and Cross-Excitation in Stack Exchange Question \& Answer Communities},
-        booktitle = {The Web Conference (WWW)},
-        year = {2019}
-    }
+    author = {Santos, Tiago and Walk, Simon and Kern, Roman and Strohmaier, Markus and Helic, Denis},
+    title = {Self- and Cross-Excitation in Stack Exchange Question \& Answer Communities},
+    booktitle = {The Web Conference (WWW)},
+    year = {2019}
+}
 ```
