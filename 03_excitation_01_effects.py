@@ -10,6 +10,8 @@ import hyperopt
 import numpy as np
 from tick.inference import HawkesExpKern
 
+import constants
+
 
 ###################
 # CONSTANTS
@@ -84,7 +86,9 @@ if not SKIP_FITTING_BETA:
                             "loglik": learner._solver_obj.get_history()["obj"][-1]})
     FITTED_BETA = min(fitted_betas, key=lambda i: i["loglik"])["beta"]
 else: # beta fitting can be computationally intensive, so here are the results
-    FITTED_BETA = 2.288 if MODE == "GROW_VS_DEC" else (2.067 if MODE == "STEM_VS_HUMAN" else raise Exception("unknown MODE"))
+    FITTED_BETA = 2.288 if MODE == "GROW_VS_DEC" else (2.067 if MODE == "STEM_VS_HUMAN" else "unknown")
+    if FITTED_BETA == "unknown":
+        raise Exception("unknown MODE")
 
 print("beta: {}".format(FITTED_BETA))
 

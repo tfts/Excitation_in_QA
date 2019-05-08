@@ -10,6 +10,8 @@ import multiprocessing
 import numpy as np
 from tick.inference import HawkesExpKern
 
+import constants
+
 
 ###################
 # CONSTANTS
@@ -39,7 +41,11 @@ assert len(DIMENSION_NAMES) == NUMBER_OF_DIMENSIONS
 def __normalization_function(value_of_list, centering_value, min_of_scale, max_of_scale):
     return (value_of_list - centering_value) / (max_of_scale - min_of_scale)
 # previously determined beta values
-FITTED_BETA = 2.288 if MODE == "GROW_VS_DEC" else (2.067 if MODE == "STEM_VS_HUMAN" else raise Exception("unknown MODE"))
+FITTED_BETA = 2.288 if MODE == "GROW_VS_DEC" else (2.067 if MODE == "STEM_VS_HUMAN" else "unknown")
+if FITTED_BETA == "unknown":
+    raise Exception("unknown MODE")
+
+
 print("beta: {}".format(FITTED_BETA))
 
 
